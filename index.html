@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FocusTimer - Minimalist Pomodoro timer for productive work">
+    <title>FocusTimer – Pomodoro</title>
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="./src/styles/theme.css">
+    <link rel="icon" type="image/png" href="./src/assets/favicon.png">
+</head>
+<body>
+    <div class="settings-bar">
+        <div class="theme-selector">
+            <button class="theme-btn" data-theme="light" title="Light Theme">☀️</button>
+            <button class="theme-btn" data-theme="dark" title="Dark Theme">🌙</button>
+        </div>
+        
+        <div class="language-selector">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="uk">UA</button>
+            <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+    </div>
+
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <h1 data-i18n="title">FocusTimer</h1>
+
+        <div class="timer-wrapper">
+            <svg class="progress-ring" width="280" height="280">
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <circle class="progress-ring-circle" cx="140" cy="140" r="130"></circle>
+                <circle class="progress-ring-progress" cx="140" cy="140" r="130" id="progressCircle"></circle>
+            </svg>
+            <div class="timer-display" id="timerDisplay">25:00</div>
+            <div class="timer-label" id="timerLabel" data-i18n="timer.ready">Ready to Focus</div>
+        </div>
+
+        <div class="controls">
+            <button class="primary" id="startBtn" data-i18n="buttons.start">▶ Start</button>
+            <button id="pauseBtn" style="display: none;" data-i18n="buttons.pause">⏸ Pause</button>
+            <button id="resetBtn" data-i18n="buttons.reset">🔄 Reset</button>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="sessionsCompleted">0</div>
+                <div class="stat-label" data-i18n="stats.sessions">Sessions Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalMinutes">0</div>
+                <div class="stat-label" data-i18n="stats.minutes">Minutes Focused</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./src/scripts/app.js"></script>
+</body>
+</html>
