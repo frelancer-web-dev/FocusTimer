@@ -1,0 +1,167 @@
+:root {
+    /* Dark Theme (Default) */
+    --bg-gradient-start: #0f0c29;
+    --bg-gradient-mid: #302b63;
+    --bg-gradient-end: #24243e;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --text-muted: rgba(255, 255, 255, 0.5);
+    
+    --accent-primary: #667eea;
+    --accent-secondary: #764ba2;
+    
+    --surface-glass: rgba(255, 255, 255, 0.05);
+    --surface-glass-hover: rgba(255, 255, 255, 0.1);
+    --border-glass: rgba(255, 255, 255, 0.1);
+    --border-glass-hover: rgba(255, 255, 255, 0.2);
+    
+    --button-bg: rgba(255, 255, 255, 0.1);
+    --button-border: rgba(255, 255, 255, 0.2);
+    --button-hover: rgba(255, 255, 255, 0.2);
+    
+    --progress-ring-bg: rgba(255, 255, 255, 0.1);
+    --particle-color: rgba(255, 255, 255, 0.5);
+    
+    --shadow-glow: rgba(102, 126, 234, 0.5);
+    --shadow-glow-strong: rgba(102, 126, 234, 0.6);
+    --shadow-button: rgba(102, 126, 234, 0.4);
+}
+
+[data-theme="light"] {
+    /* Light Theme */
+    --bg-gradient-start: #f0f4ff;
+    --bg-gradient-mid: #e8ecff;
+    --bg-gradient-end: #f5f7ff;
+    --text-primary: #1a202c;
+    --text-secondary: rgba(26, 32, 44, 0.7);
+    --text-muted: rgba(26, 32, 44, 0.5);
+    
+    --accent-primary: #5568d3;
+    --accent-secondary: #6b46c1;
+    
+    --surface-glass: rgba(255, 255, 255, 0.8);
+    --surface-glass-hover: rgba(255, 255, 255, 0.95);
+    --border-glass: rgba(102, 126, 234, 0.2);
+    --border-glass-hover: rgba(102, 126, 234, 0.4);
+    
+    --button-bg: rgba(102, 126, 234, 0.1);
+    --button-border: rgba(102, 126, 234, 0.3);
+    --button-hover: rgba(102, 126, 234, 0.2);
+    
+    --progress-ring-bg: rgba(102, 126, 234, 0.15);
+    --particle-color: rgba(102, 126, 234, 0.3);
+    
+    --shadow-glow: rgba(102, 126, 234, 0.3);
+    --shadow-glow-strong: rgba(102, 126, 234, 0.4);
+    --shadow-button: rgba(102, 126, 234, 0.3);
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-mid), var(--bg-gradient-end));
+    color: var(--text-primary);
+    transition: background 0.5s ease, color 0.3s ease;
+}
+
+.language-selector,
+.theme-selector {
+    background: var(--surface-glass);
+    border: 1px solid var(--border-glass);
+    transition: all 0.3s ease;
+}
+
+.lang-btn,
+.theme-btn {
+    color: var(--text-secondary);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover,
+.theme-btn:hover {
+    color: var(--text-primary);
+    background: var(--surface-glass-hover);
+}
+
+.lang-btn.active,
+.theme-btn.active {
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    color: #fff;
+}
+
+h1 {
+    background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.timer-label {
+    color: var(--text-secondary);
+}
+
+.progress-ring {
+    filter: drop-shadow(0 0 15px var(--shadow-glow-strong));
+    transition: filter 0.3s ease;
+}
+
+.progress-ring-circle {
+    stroke: var(--progress-ring-bg);
+    transition: stroke 0.3s ease;
+}
+
+.timer-display {
+    text-shadow: 0 0 30px var(--shadow-glow);
+    transition: text-shadow 0.3s ease;
+}
+
+button {
+    background: var(--button-bg);
+    border: 2px solid var(--button-border);
+    color: var(--text-primary);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: var(--button-hover);
+    border-color: var(--border-glass-hover);
+    box-shadow: 0 5px 20px var(--shadow-button);
+}
+
+button.primary {
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    border: none;
+    color: #fff;
+}
+
+button.primary:hover {
+    background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+    box-shadow: 0 5px 30px var(--shadow-glow-strong);
+}
+
+.stat-number {
+    color: var(--accent-primary);
+    transition: color 0.3s ease;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.particle {
+    background: var(--particle-color);
+    transition: background 0.3s ease;
+}
+
+[data-theme="light"] .progress-ring-progress {
+    filter: drop-shadow(0 2px 8px rgba(102, 126, 234, 0.3));
+}
+
+[data-theme="light"] .timer-display {
+    text-shadow: 0 2px 15px var(--shadow-glow);
+}
+
+[data-theme="light"] h1 {
+    filter: drop-shadow(0 2px 8px rgba(102, 126, 234, 0.2));
+}
